@@ -1,8 +1,37 @@
 <html>
 <head>
-<title>New</title>
+	<title>New</title>
+	<meta charset="utf-8"></meta>
+	<script src="Chart.min.js"></script>
+	<style>
+	body {background-image:url(bg.png);}
+	#header {width: 1250px; height: 50px; background-image:url(header.png);background-repeat:no-repeat;}
+	#wrapper {width:1250px; margin:0 auto;}
+	#myChart {background-color:#e6e6e6; border: 1px brown dashed; padding:25px;border-radius:25px;}
+	</style>
 </head>
 <body>
-	<div id="container" class="containers" style="height: 440px; width: 100%;"></div>
+	<div id="wrapper">
+		<div id="header"></div>
+		<canvas id="myChart" width="1200" height="400"></canvas>
+	</div>
 </body>
+
+<script type="text/javascript">
+var data = {
+    labels: ["Школа №1", "Школа №2", "Школа №3", "Школа №4", "Школа №5", "Боромлянська", "Білківська"],
+    datasets: [
+        {
+            label: "My Second dataset",
+            fillColor: "rgba(131,137,255,0.5)",
+            strokeColor: "rgba(0,0,255,0.8)",
+            highlightFill: "rgba(131,137,255,0.75)",
+            highlightStroke: "rgba(131,137,255,1)",
+            data: [65, 59, 80, 81, 56, 55, 40]
+        }
+    ]
+};
+var ctx = document.getElementById("myChart").getContext("2d");
+var myBarChart = new Chart(ctx).Bar(data, {});
+</script>
 </html>
