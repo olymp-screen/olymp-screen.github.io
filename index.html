@@ -10,21 +10,42 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	
 	<style>
-	body {background-image:url(bg.png); margin-top:20px;}
-	#header {width: 1250px; height: 50px; background-image:url(header.png);background-repeat:no-repeat;}
+	body {background-image:url(bg.png); margin-top:20px; margin-bottom:20px;}
+	#header {width: 1250px; height: 50px; background-image:url(header.png);background-repeat:no-repeat;margin-bottom:20px;}
 	#wrapper {width:1250px; margin:0 auto;}
-	#myChart {background-color:#e6e6e6; border: 1px brown dashed; padding:25px;border-radius:0 0 25px 25px;}
+	.chart {background-color:#e6e6e6; border: 1px brown dashed; padding:25px;border-radius:0 0 25px 25px;}
+	#list {background-color:#e6e6e6; border: 1px brown dashed; padding:25px;border-radius:25px;}
+	.third {color:green;font-weight:bold;}
 	</style>
 </head>
 <body>
 	<div id="wrapper" ng-controller="Tabs">
 		<div id="header"></div>
 		<tabset>
-			<tab heading="За рейтингом" select="build1()">
-				<canvas id="myChart" width="1200" height="400"></canvas>
+			<tab heading="За місцями" select="build(1)">
+			<div class="chart">
+				<div class="alert alert-info" role="alert" width="100" height="30">
+					Рейтинг обраховується за таким принципом: за кожне отримане 3 місце &ndash; 1 бал, 2 місце &ndash; 3 бали, 1 місце &ndash; 5 балів. Усі бали
+					додаються та діляться на загальну кількість учасників.
+				</div>
+				<canvas id="myChart1" width="1200" height="350"></canvas>
+			</div>
 			</tab>
-			<tab heading="Static title"></tab>
+			<tab heading="За рейтингом" select="build(2)">
+			<div class="chart">
+				<canvas id="myChart2" width="1200" height="350"></canvas>
+			</div>			
+			</tab>
 		</tabset>
+		<br />
+		<div id="list">
+			<h1>Список призерів</h1>
+			<ul class="list-group">
+				<li class="list-group-item"><strong>Холодько Оксана</strong> (СШ №5) &ndash; Інформаційні технології, <span class="third">ІІІ місце</span></li>
+				<li class="list-group-item"><strong>Батраченко Владислав</strong> (СШ №5) &ndash; Математика, <span class="third">ІІІ місце</span></li>
+				<li class="list-group-item"><strong>Красніков Андрій</strong> (СШ №3) &ndash; Математика, <span class="third">III місце</span></li>
+			</ul>
+		</div>
 	</div>
 </body>
 </html>
