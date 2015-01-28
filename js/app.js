@@ -1,88 +1,101 @@
-var app = angular.module('Monitor', ['ui.bootstrap']);
+var database = {
+	// Результати шкіл в районі
+	inPlaces: [
+		[0, 0, 0], // 1 місця
+		[0, 0, 0], // 2 місця
+		[2, 1, 0], // 3 місця
+	],
+	pPlaces: [
+		[0, 0, 0],
+		[0, 0, 0],
+		[1, 1, 1]
+	],
+	inRate: [0.66, 0.33, 0],
+	regRate: [0.326, 0.174, 0.096, 0.084, 0.079, 0.045, 0.039, 0.028, 0.022, 0.017, 0.017, 
+				0.011, 0.011, 0.011, 0.011, 0.006, 0.006, 0.006, 0.006, 0.006, 0, 0, 0, 0, 0, 0, 0]
+}
 
-app.controller('Tabs', function ($scope, $window) {
-  $scope.build = function(chartNum) {
-    setTimeout(function() { 
-		var data1 = {
-			labels: ["Школа №5", "Школа №3", "Школа №1", "Школа №2", "Школа №4", "Боромлянська", "Білківська"],
-			datasets: [
-				{
-					label: "My Second dataset",
-					fillColor: "rgba(131,137,255,0.5)",
-					strokeColor: "rgba(0,0,255,0.8)",
-					highlightFill: "rgba(131,137,255,0.75)",
-					highlightStroke: "rgba(131,137,255,1)",
-					data: [2, 1, 0, 0, 0, 0, 0]
-				}
-			]
-		};
-		
-		var data2 = {
-			labels: ["Школа №5", "Школа №3", "Школа №1", "Школа №2", "Школа №4", "Боромлянська", "Білківська"],
-			datasets: [
-				{
-					label: "My Second dataset",
-					fillColor: "rgba(131,137,255,0.5)",
-					strokeColor: "rgba(0,0,255,0.8)",
-					highlightFill: "rgba(131,137,255,0.75)",
-					highlightStroke: "rgba(131,137,255,1)",
-					data: [660, 330, 0, 0, 0, 0, 0]
-				}
-			]
-		};
-		
-		var data3 = {
-			labels: ["Холодько", "Батраченко", "Красніков"],
-			datasets: [
-				{
-					label: "My Second dataset",
-					fillColor: "rgba(131,137,255,0.5)",
-					strokeColor: "rgba(0,0,255,0.8)",
-					highlightFill: "rgba(131,137,255,0.75)",
-					highlightStroke: "rgba(131,137,255,1)",
-					data: [1, 1, 1]
-				}
-			]
-		};
-		
-		var data4 = {
-			labels: ["м.Суми", "м.Шостка", "м.Конотоп", "Кролевецький район", "Кадетський корпус", "Білопільський район", 
+var option1 =  {
+    chart: { type: 'bar' },
+    title: { text: '' },
+    xAxis: { categories: ['Школа №5', 'Школа №3', 'Школа №4'] },
+    yAxis: { title: { text: ''}, max: 5, allowDecimals: false },
+    plotOptions: { series: { stacking: 'normal' } },
+	series : [
+		{ name: 'І місце',   data: database.inPlaces[0] }, 
+		{ name: 'ІІ місце',  data: database.inPlaces[1] }, 
+		{ name: 'ІІІ місце', data: database.inPlaces[2] },
+	]
+};
+
+var option2 =  {
+    chart: { type: 'bar' },
+    title: { text: '' },
+    xAxis: { categories: ['Школа №5', 'Школа №3', 'Школа №4'] },
+    yAxis: { title: { text: ''}, max: 1 },
+    plotOptions: { series: { stacking: 'normal' } },
+	series : [
+		{ name: 'Рейтинг', data: database.inRate },
+	]
+};
+
+var option3 =  {
+    chart: { type: 'bar' },
+    title: { text: '' },
+    xAxis: { categories: ['Холодько', 'Батраченко', 'Красніков'] },
+    yAxis: { title: { text: ''}, max: 5, allowDecimals: false },
+    plotOptions: { series: { stacking: 'normal' } },
+	series : [
+		{ name: 'І місце',   data: database.pPlaces[0] }, 
+		{ name: 'ІІ місце',  data: database.pPlaces[1] }, 
+		{ name: 'ІІІ місце', data: database.pPlaces[2] },
+	]
+};
+
+var option4 =  {
+    chart: { type: 'bar' },
+    title: { text: '' },
+    xAxis: { 
+		categories: [
+					"м.Суми", "м.Шостка", "м.Конотоп", "Кролевецький район", "Кадетський корпус", "Білопільський район", 
 					"м.Ромни", "Липоводолинський район", "Сумська обл. гімн. для обдар.", "м.Охтирка", "Тростянецький район", 
 					"Серединобудський район", "Конотопський район", "м.Глухів", "м.Лебедин", "Ямпільський район", 
 					"Роменський район", "Краснопільський район", "Буринський район", "Великописарівський район", "Сумський район", 
 					"Глухівський район", "Лебединський район", "Недригайлівський район", "Охтирський район", "Шосткінський район", 
-					"Путивльський район"],
-			datasets: [
-				{
-					label: "My Second dataset",
-					fillColor: "rgba(131,137,255,0.5)",
-					strokeColor: "rgba(0,0,255,0.8)",
-					highlightFill: "rgba(131,137,255,0.75)",
-					highlightStroke: "rgba(131,137,255,1)",
-					data: [326, 174, 96, 84, 79, 45, 39, 28, 22, 17, 17, 11, 11, 11, 11, 6, 6, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0
-]
-				}
-			]
-		};
-		
-		if (chartNum == 1) {
-			var ctx = document.getElementById("myChart1").getContext("2d");
-			var myBarChart = new Chart(ctx).Bar(data1, {});
-		} 
-		if (chartNum == 2) {
-			var ctx = document.getElementById("myChart2").getContext("2d");
-			var myBarChart = new Chart(ctx).Bar(data2, {});
+					"Путивльський район"
+					] 
+	},
+    yAxis: { title: { text: ''}, max: 0.5 },
+    plotOptions: { series: { stacking: 'normal' } },
+	series : [
+		{ name: 'Рейтинг', data: database.regRate },
+	]
+};
+
+var app = angular.module('Monitor', ['ui.bootstrap']);
+
+app.directive('highcharts', function() {
+	return {
+		link: function(scope, el, attrs) {
+			var options;
+			var chartData = scope.$eval(attrs.chartdata);
+			if (chartData == 1) {
+				options = option1;
+			} else if(chartData == 2) {
+				options = option2;
+			} else if(chartData == 3) {
+				options = option3;
+			} else if(chartData == 4) {
+				options = option4;
+			}
+			options.chart.renderTo = el[0];
+			new Highcharts.Chart(options);
 		}
-		if (chartNum == 3) {
-			var ctx = document.getElementById("myChart3").getContext("2d");
-			var myBarChart = new Chart(ctx).Bar(data3, {});
-		}
-		if (chartNum == 4) {
-			var ctx = document.getElementById("myChart4").getContext("2d");
-			var myBarChart = new Chart(ctx).Bar(data4, {});
-		}
-    });
-  };
+	};
+});
+
+app.controller("Tabs", function($scope) {
+
 });
 
 app.controller('List', function($scope) {	
