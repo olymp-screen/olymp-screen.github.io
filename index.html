@@ -53,16 +53,13 @@
 			</tab>
 		</tabset>
 		<br />
+		
 		<div id="list" ng-controller="List">
 			<h1>Список призерів</h1>
 			<ul class="list-group">
 				<li class="list-group-item" ng-repeat="item in items">
 					<strong>{{ item.name }}</strong> ({{ item.school }}) &ndash; {{ item.subject }},
-					<span ng-switch on="item.place"> 
-						<span class="{{item.place}}" ng-switch-when="first">І місце</span> 
-						<span class="{{item.place}}" ng-switch-when="second">ІІ місце</span> 
-						<span class="{{item.place}}" ng-switch-when="third">ІІІ місце</span> 
-					</span>
+					<span class="{{item.place}}">{{item.place}} місце</span> 
 				</li>
 			</ul>
 		</div>

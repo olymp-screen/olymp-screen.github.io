@@ -112,8 +112,8 @@ app.controller("Tabs", function($scope) {
 
 app.controller('List', function($scope) {	
 	$scope.items = [
-		{ name: 'Холодько Оксана', school: 'СШ №5', subject: 'Інформаційні технології', place: 'third' },
-		{ name: 'Батраченко Владислав', school: 'СШ №5', subject: 'Математика', place: 'third' },
-		{ name: 'Красніков Андрій', school: 'СШ №3', subject: 'Математика', place: 'third' },
+		{ name: 'Холодько Оксана', school: 'СШ №5', subject: 'Інформаційні технології', place: 'III' },
+		{ name: 'Батраченко Владислав', school: 'СШ №5', subject: 'Математика', place: 'III' },
+		{ name: 'Красніков Андрій', school: 'СШ №3', subject: 'Математика', place: 'III' },
 	];
 });

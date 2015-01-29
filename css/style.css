@@ -3,6 +3,6 @@ body {background-image:url("../img/bg.png"); margin-top:20px; margin-bottom:20px
 #wrapper {width:1250px; margin:0 auto;}
 #list {background-color:#e6e6e6; border: 1px brown dashed; padding:25px;border-radius:25px;}
 .chart {background-color:#e6e6e6; border: 1px brown dashed; padding:25px;border-radius:0 0 25px 25px;}
-.third {color:green;font-weight:bold;}
-.second {color:blue;font-weight:bold;}
-.first {color:red; font-weight:bold;}
+.III {color:green;font-weight:bold;}
+.II {color:blue;font-weight:bold;}
+.I {color:red; font-weight:bold;}
