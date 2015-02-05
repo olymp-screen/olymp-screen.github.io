@@ -49,7 +49,7 @@ var option1 =  {
 var option2 =  {
     chart: { type: 'bar' },
     title: { text: '' },
-    xAxis: { categories: ['Школа №5', 'Школа №3', 'Школа №4'] },
+    xAxis: { categories: ["Школа №5", "Школа №3", "Боромлянський НВК", "Школа №2", "Школа №4"] },
     yAxis: { title: { text: ''}, max: 1 },
     plotOptions: { series: { stacking: 'normal' } },
 	series : [
