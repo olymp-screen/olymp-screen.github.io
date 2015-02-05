@@ -119,6 +119,7 @@ app.controller('List', function($scope) {
         { name: 'Андрущенко Юлія', school: 'СШ №5', subject: 'Біологія', place: 'III'},
         { name: 'Куліков Денис', school: 'СШ №5', subject: 'Інформатика', place: 'II'},
         { name: 'Трусов Богдан', school: 'СШ №5', subject: 'Інформатика', place: 'III'},
-        { name: 'Кірнос Сергій', school: 'Боромлянський НВК', subject: 'Інформатика', place: 'III'}
+        { name: 'Кірнос Сергій', school: 'Боромлянський НВК', subject: 'Інформатика', place: 'III'},
+        { name: 'Тарасенко Світлана', school: 'СШ №5', subject: 'Географія', place: 'III'}
 	];
 });
