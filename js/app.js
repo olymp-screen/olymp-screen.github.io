@@ -42,7 +42,7 @@ var option1 =  {
 	series : [
 		{ name: 'І місце',   data: database.inPlaces[0] }, 
 		{ name: 'ІІ місце',  data: database.inPlaces[1] }, 
-		{ name: 'ІІІ місце', data: database.inPlaces[2] },
+		{ name: 'ІІІ місце', data: database.inPlaces[2] }
 	]
 };
 
@@ -53,7 +53,7 @@ var option2 =  {
     yAxis: { title: { text: ''}, max: 1 },
     plotOptions: { series: { stacking: 'normal' } },
 	series : [
-		{ name: 'Рейтинг', data: database.inRate },
+		{ name: 'Рейтинг', data: database.inRate }
 	]
 };
 
@@ -66,7 +66,7 @@ var option3 =  {
 	series : [
 		{ name: 'І місце',   data: database.pPlaces[0] }, 
 		{ name: 'ІІ місце',  data: database.pPlaces[1] }, 
-		{ name: 'ІІІ місце', data: database.pPlaces[2] },
+		{ name: 'ІІІ місце', data: database.pPlaces[2] }
 	]
 };
 
