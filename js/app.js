@@ -8,7 +8,6 @@ function sortTogether(array1, array2) {
 var database = {
 	// Результати шкіл в районі
 	inPlaces: [
-        // СШ №5, СШ №3, БорНВК, СШ№2, СШ№4
 		[0, 0, 0, 0, 0], // 1 місця
 		[2, 0, 0, 0, 0], // 2 місця
 		[5, 1, 1, 0, 0] // 3 місця
@@ -37,7 +36,7 @@ var option1 =  {
     chart: { type: 'bar', animation: 'false' },
     title: { text: '' },
     xAxis: { categories: database.inTeams },
-    yAxis: { title: { text: ''}, max: 5, allowDecimals: false },
+    yAxis: { title: { text: ''}, max: 10, allowDecimals: false },
     plotOptions: { series: { stacking: 'normal' } },
 	series : [
 		{ name: 'І місце',   data: database.inPlaces[0] }, 
