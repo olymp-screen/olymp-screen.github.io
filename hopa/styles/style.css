@@ -1,0 +1,19 @@
+body {
+    min-height: 500px !important;
+    background-image: url('../imgs/bg.jpg') !important;
+}
+
+.np-title {
+    font-family: 'Lobster', sans-serif;
+    font-size: 26px !important;
+}
+
+.ava {
+    width: 100px !important;
+    height: 100px !important;
+    max-width: 100px !important;
+}
+
+.namep {
+    font-weight: ;
+}
