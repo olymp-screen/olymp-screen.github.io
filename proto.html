@@ -11,14 +11,14 @@
 </head>
 <body>
     <h1>Определение эффективности КИС</h1>
-    <form>
+    <form action="http://google.com">
         <table>
             <tr>
                 <td class="left"><label for="firmName">Фирма:</label></td>
                 <td class="right"><input name="firmName" id="firmName" type="text" /></td>
             </tr>
             <tr>
-                <td><label for="field1">1. Среда передачи данных</label></td>
+                <td><label for="field1">1. Какая среда передачи данных используется в компьютерной сети фирмы?</label></td>
                 <td>
                     <input type="radio" name="field1" id="field1">оптоволоконная<br/>
                     <input type="radio" name="field1">радиоканал<br/>
@@ -27,7 +27,7 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="field2">3. Технология корпоративной сети</label></td>
+                <td><label for="field2">3. Каковы технологии применены при организации корпоративной вычислительной сети</label></td>
                 <td>
                     <input type="radio" name="field2" id="field2">SONET, SDH<br/>
                     <input type="radio" name="field2">ATM<br/>
@@ -35,27 +35,44 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="field3">5. Доступность компьютеров</label></td>
+                <td><label for="field3">5. Сколько компьютеров приходится на одного пользователя?</label></td>
                 <td>
-
+                    <input type="radio" name="field3" id="field3">1 и более<br/>
+                    <input type="radio" name="field3">0,5-1<br/>
+                    <input type="radio" name="field3">меньше 0,5<br/>
+                    <input type="radio" name="field3">нет компьютеров<br/>
                 </td>
             </tr>
             <tr>
-                <td><label for="field4">7. Наличие серверов в сети</label></td>
+                <td><label for="field4">7. Какие виды серверов использует фирма</label></td>
                 <td>
-
+                    <input type="radio" name="field4" id="field4">сервер данных<br/>
+                    <input type="radio" name="field4">Web-сервер<br/>
+                    <input type="radio" name="field4">DNS-сервер<br/>
+                    <input type="radio" name="field4">FTP-сервер<br/>
+                    <input type="radio" name="field4">другие серверы<br/>
                 </td>
             </tr>
             <tr>
-                <td><label for="field5">8. Организация данных</label></td>
+                <td><label for="field5">8. Как организовано хранение данных?</label></td>
                 <td>
-
+                    <input type="radio" name="field5" id="field5">в виде баз знаний<br/>
+                    <input type="radio" name="field5">в виде баз данных<br/>
+                    <input type="radio" name="field5">в виде файлов<br/>
                 </td>
             </tr>
             <tr>
-                <td><label for="field6">9. Применение программного обеспечения</label></td>
+                <td><label for="field6">9. Какое используется на фирме программное обеспечение?</label></td>
                 <td>
-
+                    <input type="radio" name="field6" id="field6">покупка лицензионных продуктов в известных брендов<br/>
+                    <input type="radio" name="field6">использование бесплатного программного обеспечения<br/>
+                    <input type="radio" name="field6">собственные программные разработки<br/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="reset"><input type="submit">
                 </td>
             </tr>
         </table>
