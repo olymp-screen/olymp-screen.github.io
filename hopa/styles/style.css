@@ -17,3 +17,15 @@ body {
 .namep {
     font-weight: bold;
 }
+
+.place1 {
+    color:#FFF;background-color:#F44336;
+}
+
+.place2 {
+    color:#FFF;background-color:#2196F3;
+}
+
+.place3 {
+    color:#FFF;background-color:#4CAF50;
+}

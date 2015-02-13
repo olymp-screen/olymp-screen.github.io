@@ -15,6 +15,7 @@
     <div class="toolbar">
         <i class="icon icon--l icon--green icon--circled mdi mdi-chart-line"></i>&nbsp;&nbsp;
         <span class="toolbar__label fs-title np-title">Моніторинг успішності</span>
+        <span class="toolbar__right toolbar__label bgc-blue-400 menu">Hello</span>
     </div>
 </div>
 <div class="tc-white-1" flex-container="row" flex-align="center">
@@ -50,38 +51,27 @@
                     <th></th>
                     <th>Ім'я</th>
                     <th>Навчальний заклад</th>
-                    <th>Предмет і місце</th>
+                    <th>Предмет</th>
+                    <th>Місце</th>
                 </tr>
                 </thead>
 
-                <tbody>
-                <tr class="data-table__clickable-row">
+                <tbody ng-controller="List">
+                <tr class="data-table__clickable-row" ng-repeat="item in items">
                     <td style="width:15%">
-                        <img class="list-primary-tile__img ava" src="imgs/1.jpg">
+                        <img class="list-primary-tile__img ava" src="imgs/{{ item.id }}.jpg">
                     </td>
                     <td style="width:15%">
-                        <span class="namep">Холодько Оксана</span>
+                        <span class="namep">{{ item.name }}</span>
                     </td>
-                    <td style="width:30%">
-                        <span>Тростянецька спеціалізована школа I-III ступенів №5</span>
+                    <td style="width:35%">
+                        <span>{{ item.school }}</span>
                     </td>
-                    <td style="width:30%">
-                        <span>Інформаційні технології&nbsp;<i class="icon icon--l icon--green icon--circled mdi mdi-numeric-3-box-outline"></i></span>
+                    <td style="width:15%">
+                        <span>{{ item.subject }}</span>
                     </td>
-                </tr>
-
-                <tr class="data-table__clickable-row">
-                    <td>
-                        <i class="icon icon--l icon--grey icon--circled mdi mdi-android"></i>
-                    </td>
-                    <td>
-                        <span>Lorem Ipsum</span>
-                    </td>
-                    <td>
-                        <span>Lorem Ipsum</span>
-                    </td>
-                    <td>
-                        <span>Lorem Ipsum</span>
+                    <td style="width:10%">
+                        <span><i class="icon icon--l icon--circled mdi mdi-numeric-{{ item.place }}-box-outline place{{ item.place }}"></i></span>
                     </td>
                 </tr>
                 </tbody>
