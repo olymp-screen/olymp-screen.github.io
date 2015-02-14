@@ -1,80 +1,68 @@
-<html>
-<head>
-	<title>Монітор успішності</title>
-	<meta charset="utf-8">
-	
-	<script src="js/angular.js"></script>
-	<script src="js/ui-bootstrap.js"></script>
-	<script src="js/sf-highcharts.js"></script>
-	<script src="js/highcharts.js"></script>
-	<script src="js/theme.js"></script>
-	
-	<script src="js/app.js"></script>
-	
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- Head -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="bower_components/lumx/dist/lumx.css">
+    <link rel="stylesheet" href="bower_components/mdi/materialdesignicons.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster&subset=cyrillic">
 </head>
 <body>
-	<div id="wrapper" ng-controller="Tabs" ng-app="Monitor">
-		<div id="header"></div>
-		<tabset>
-			<tab heading="За місцями">
-				<div class="chart">
-					<div highcharts="chartOptions" chartdata="1" style="width: 1200px; height: 400px"></div>
-				</div>
-			</tab>
-			<tab heading="За рейтингом">
-				<div class="chart">
-					<div class="alert alert-info" role="alert" width="100" height="30">
-						Рейтинг обраховується за таким принципом: за кожне отримане 3 місце &ndash; 1 бал, 2 місце &ndash; 3 бали, 1 місце &ndash; 5 балів. Усі 
-						отримані бали додаються та діляться на сумарний бал району.
-					</div>
-					<div highcharts="chartOptions" chartdata="2" style="width: 1200px; height: 400px"></div>
-				</div>			
-			</tab>
-			<tab heading="Особистий залік">
-				<div class="chart">
-					<div highcharts="chartOptions" chartdata="3" style="width: 1200px; height: 400px"></div>
-				</div>			
-			</tab>
-			<tab heading="Рейтинг в області">
-				<div class="chart">
-					<div class="alert alert-info" role="alert" width="100" height="30">
-						Рейтинг обраховується за таким принципом: за кожне отримане 3 місце &ndash; 1 бал, 2 місце &ndash; 3 бали, 1 місце &ndash; 5 балів. Усі 
-						отримані бали додаються та діляться на сумарний бал області.
-					</div>
-					<div highcharts="chartOptions" chartdata="4" style="width: 1200px; height: 700px"></div>
-				</div>			
-			</tab>
-		</tabset>
-		<br />
-		
-		<div id="list" ng-controller="List">
-			<h1>Список призерів</h1>
-			<ul class="list-group">
-				<li class="list-group-item" ng-repeat="item in items">
-					<strong>{{ item.name }}</strong> ({{ item.school }}) &ndash; {{ item.subject }},
-					<span class="{{item.place}}">{{item.place}} місце</span> 
-				</li>
-			</ul>
+<div class="card bgc-blue-500 tc-blue-grey-50">
+    <div class="toolbar">
+        <i class="icon icon--l icon--green icon--circled mdi mdi-chart-line"></i>&nbsp;&nbsp;
+        <span class="toolbar__label fs-title np-title">Моніторинг успішності</span>
+        <nav>
+            <ul>
+                <li><a class="active" href="index.html">Графіки</a></li>
+                <li><a href="list.html">Переможці</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="tc-white-1" flex-container="row" flex-align="center">
+    <div flex-item="12" class="p+">
+        <div class="card">
+            <lx-tabs>
+                <lx-tab heading="За місцями">
+                    <div class="chart">
+                        <div highcharts="chartOptions" chartdata="1" style="width: 1200px; height: 400px"></div>
+                    </div>
+                </lx-tab>
 
-            <!-- MyCounter v.2.0 -->
-            <script type="text/javascript"><!--
-            my_id = 146793;
-            my_width = 88;
-            my_height = 61;
-            my_alt = "MyCounter - счётчик и статистика";
-            //--></script>
-            <script type="text/javascript"
-                    src="https://get.mycounter.ua/counter2.0.js">
-            </script><noscript>
-            <a target="_blank" href="http://mycounter.ua/"><img
-                    src="https://get.mycounter.ua/counter.php?id=146793"
-                    title="MyCounter - счётчик и статистика"
-                    alt="MyCounter - счётчик и статистика"
-                    width="88" height="61" border="0" /></a></noscript>
-            <!--/ MyCounter -->
-		</div>
-	</div>
+                <lx-tab heading="За рейтингом">
+                    <div class="chart">
+                        <div highcharts="chartOptions" chartdata="2" style="width: 1200px; height: 400px"></div>
+                    </div>
+                </lx-tab>
+
+                <lx-tab heading="Особистий залік">
+                    <div class="chart">
+                        <div highcharts="chartOptions" chartdata="3" style="width: 1200px; height: 400px"></div>
+                    </div>
+                </lx-tab>
+
+                <lx-tab heading="Рейтинг в області">
+                    <div class="chart">
+                        <div highcharts="chartOptions" chartdata="4" style="width: 1200px; height: 700px"></div>
+                    </div>
+                </lx-tab>
+
+            </lx-tabs>
+        </div>
+    </div>
+</div>
 </body>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/velocity/velocity.js"></script>
+<script src="bower_components/moment/min/moment-with-locales.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/lumx/dist/lumx.js"></script>
+<script src="js/sf-highcharts.js"></script>
+<script src="js/highcharts.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/app.js"></script>
 </html>
