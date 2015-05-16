@@ -3,7 +3,7 @@ Highcharts.theme = {
     chart: { backgroundColor: '#ffffff' },
     legend: {
         itemStyle: {
-            font: '11pt Arial, Verdana, sans-serif',
+            font: '11pt Consolas, Verdana, sans-serif',
             color: 'black'
         },
         itemHoverStyle:{ color: 'gray' }   
